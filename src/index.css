@@ -1,0 +1,19 @@
+*, *:before, *:after {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   box-sizing: border-box;
+}
+html {scroll-behavior: smooth;}
+:root{
+    --bg-color: #0B0C10;
+    --card-color: #1F2833;
+    --accent-card-color: #2d4156;
+    --primary-text-color: #FFFFFF;
+    --secondary-text-color: rgb(163, 161, 161);
+    --accent-color: #66FCF1;
+    --alert-color: #FF416C;
+    --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+}
