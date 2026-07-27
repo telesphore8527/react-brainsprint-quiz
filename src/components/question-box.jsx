@@ -59,47 +59,46 @@ export function QuestionBox({
       <div className="quest-box">
         <div className="quest-box-main">
           <div className="quest-box-header">Question Box</div>
-          {questTab &&
-          questTab.length > 0 &&
-          questTab[questId] &&
-          heartNumber > 0 ? (
-            <section className="quest-item">
-              <p>{he.decode(questTab[questId].question)}</p>
-              <div className="action-area">
-                <div>Action Area</div>
-                <div className="btns">
-                  <button
-                    onClick={() =>
-                      handleClick("True", questTab[questId].correct_answer)
-                    }
-                  >
-                    True
-                  </button>
+          {
+            questTab &&
+            questTab.length > 0 &&
+            questTab[questId] &&
+            heartNumber > 0 ? (
+              <section className="quest-item">
+                <p>{he.decode(questTab[questId].question)}</p>
+                <div className="action-area">
+                  <div>Action Area</div>
+                  <div className="btns">
+                    <button
+                      onClick={() =>
+                        handleClick("True", questTab[questId].correct_answer)
+                      }
+                    >
+                      True
+                    </button>
 
-                  <button
-                    onClick={() =>
-                      handleClick("False", questTab[questId].correct_answer)
-                    }
-                  >
-                    False
-                  </button>
+                    <button
+                      onClick={() =>
+                        handleClick("False", questTab[questId].correct_answer)
+                      }
+                    >
+                      False
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </section>
-          ) : (!questTab[questId] && questId >= questTab.length) ||
-            heartNumber === 0 ? (
-            !questTab[questId] ? (
+              </section>
+            ) : (!questTab[questId] && questTab.length === 0) ? (
               <div className="error">
                 <div className="msg-icon alert">
-                  <FiAward />
+                  <FiWifiOff />
                 </div>
-                Felicitations, vous avez gagne
+                Erreur de connexion, veuillez reessayer
                 <button onClick={() => window.location.reload()}>
-                  <FiPlayCircle />
-                  Jouer a nouveau
+                  <FiRefreshCcw />
+                  Reessayer
                 </button>
               </div>
-            ) : (
+            ) : heartNumber <= 0 ? (
               <div className="error">
                 <div className="msg-icon alert">
                   <FiFrown />
@@ -110,19 +109,19 @@ export function QuestionBox({
                   recommencer
                 </button>
               </div>
-            )
-          ) : (
-            <div className="error">
-              <div className="msg-icon alert">
-                <FiWifiOff />
+            ) : (
+              <div className="error">
+                <div className="msg-icon">
+                  <FiAward />
+                </div>
+                Felicitations, vous avez gagne
+                <button onClick={() => window.location.reload()}>
+                  <FiPlayCircle />
+                  Jouer a nouveau
+                </button>
               </div>
-              Erreur de connexion, veuillez reessayer
-              <button onClick={() => window.location.reload()}>
-                <FiRefreshCcw />
-                Reessayer
-              </button>
-            </div>
-          )}
+            )
+          }
         </div>
       </div>
     </section>

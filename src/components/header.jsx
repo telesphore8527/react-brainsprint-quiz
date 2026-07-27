@@ -9,7 +9,7 @@ export function Header({ highScore }) {
           </div>
           <div className="brand-name">
             <h1>BrainSprint</h1>
-            <div className="sub-brand">Think Fast, Stay, Sharp</div>
+            <div className="sub-brand">Think Fast, Stay Sharp</div>
           </div>
         </div>
         <div>

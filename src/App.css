@@ -20,6 +20,8 @@ header{
     display: flex;
     align-items: center;
     gap: 8px;
+    font-family: roboto;
+    font-weight: bold;
 }
 .logo{
     font-size: 3.3rem;
@@ -29,13 +31,15 @@ header{
 .sub-brand{
     color: var(--secondary-text-color);
     font-size: .85rem;
-    font-family: sans-serif;
+    
+    
 }
 .highSore{
     color: var(--accent-color);
     border: 2px solid var(--accent-color);
     padding: 7px;
-    font-size: .85rem;
+    font-size: .80rem;
+    text-align: center;
     border-radius: 18px;
     text-transform: uppercase;
     box-shadow: 0 0 5px var(--accent-color);
@@ -127,6 +131,13 @@ header{
     justify-content: center;
     gap: 1rem;
     margin: 1.2rem;
+}
+
+.msg-icon{
+    color: var(--accent-color);
+}
+.msg-icon.alert{
+    color: var(--alert-color);
 }
  button{
    padding: .8rem 3rem;
